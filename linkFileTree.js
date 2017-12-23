@@ -69,5 +69,7 @@
             });
         });
     };
+    
+    window.FileTree.linkFileTree();
 
 }(jQuery));
