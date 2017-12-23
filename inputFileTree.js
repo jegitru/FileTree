@@ -91,7 +91,7 @@
             
             forEachElements(function(){
               
-                this.addEventListener('change', function(){
+                $(this).bind('change', function(){
 
                     if ( this.name == 'folder' ) {
                       

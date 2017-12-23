@@ -15,42 +15,29 @@
             return api.forEachElements('a', callback);
         };
         
-        function getListElement(elem){
-          
-            while ( elem = elem.nextSibling ) {
-                if ( elem.nodeType == 1 ) {
-                    if ( elem.nodeName == 'UL' ) {
-                        break;
-                    }
-                }
-            }
-            
-            return elem;
-        };
-        
         forEachElements(function(){
           
-            this.addEventListener('click', function(e){
+            $(this).bind('click', function(e){
+              
+                var elem = $(this);
 
-                if ( this.getAttribute('data-type') == 'folder' ) {
+                if ( elem.attr('data-type') == 'folder' ) {
                   
-                    var listElement = getListElement(this);
+                    var listElement = elem.nextAll('ul');
                     
-                    if ( listElement ) {
-                      
-                        var style = listElement.style;
-                        
-                        if ( style.display == 'none' ) {
+                    if ( listElement.length ) {
 
-                            style.display = '';
-                            this.parentNode.setAttribute('data-opened', '1');
-                            $(this).find('i').removeClass(folderClosedClass).addClass(folderOpenedClass);
+                        if ( listElement.is(':hidden') ) {
+
+                            listElement.css('display', '');
+                            elem.parent().attr('data-opened', '1');
+                            elem.find('i').removeClass(folderClosedClass).addClass(folderOpenedClass);
                           
                         } else {
 
-                            style.display = 'none';
-                            this.parentNode.setAttribute('data-opened', '0');
-                            $(this).find('i').removeClass(folderOpenedClass).addClass(folderClosedClass);
+                            listElement.css('display', 'none');
+                            elem.parent().attr('data-opened', '0');
+                            elem.find('i').removeClass(folderOpenedClass).addClass(folderClosedClass);
                         }
                     }
                 }
