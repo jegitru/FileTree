@@ -2,11 +2,11 @@
   
     window.FileTree.inputFileTree = function(){
       
-        var id = this.id;
+        var api = this;
     
         // Get all elements
         function getElements(){
-            return document.getElementById(id).parentNode.getElementsByTagName('input');
+            return api.getElements('input');
         };
         
         function getFolderPath(path, index){
@@ -14,13 +14,7 @@
         };
         
         function forEachElements(callback){
-            var elements = getElements();
-            for ( var i = 0; i < elements.length; i++ ) {
-                var result = callback.call(elements[i]);
-                if ( typeof(result) != 'undefined' ) {
-                    return result;
-                }
-            }
+            return api.forEachElements('input', callback);
         };
         
         function checkFolder(path, index){
