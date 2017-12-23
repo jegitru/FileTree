@@ -2,23 +2,17 @@
   
     window.FileTree.linkFileTree = function(){
       
-        var id = this.id,
+        var api = this, id = api.id,
             folderClosedClass = this.folderClosedClass,
             folderOpenedClass = this.folderOpenedClass;
         
         // Get all elements
         function getElements(){
-            return document.getElementById(id).parentNode.getElementsByTagName('a');
+            return api.getElements('a');
         };
         
         function forEachElements(callback){
-            var elements = getElements();
-            for ( var i = 0; i < elements.length; i++ ) {
-                var result = callback.call(elements[i]);
-                if ( typeof(result) != 'undefined' ) {
-                    return result;
-                }
-            }
+            return api.forEachElements('a', callback);
         };
         
         function getListElement(elem){
