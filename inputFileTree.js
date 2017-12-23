@@ -1,4 +1,7 @@
-inputFileTree = function(id){
+
+alert(111);
+
+function inputFileTree(id){
     
     // Get all elements
     function getElements(){
