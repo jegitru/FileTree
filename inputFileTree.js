@@ -115,7 +115,7 @@
             $('#select-all').bind('change', function(){
               
                 var elem = this;
-              
+              alert(1);
                 forEachElements(function(){
                     this.checked = elem.checked;
                 });
