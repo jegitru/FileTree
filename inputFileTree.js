@@ -109,6 +109,15 @@
                 checkRootFolder(this.value);
             });
         });
+        
+        $('#select-all').bind('click', function(){
+          
+            var elem = this;
+          
+            forEachElements(function(){
+                this.checked = elem.checked;
+            });
+        });
     };
     
     window.FileTree.inputFileTree();
