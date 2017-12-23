@@ -1,6 +1,8 @@
 (function($){
   
-    window.linkFileTree = function(id){
+    window.FileTree.linkFileTree = function(){
+      
+        var id = this.id;
         
         // Get all elements
         function getElements(){
