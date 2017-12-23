@@ -1,4 +1,4 @@
-function inputFileTree(id){
+function inputFileTree(id){ 
     
     // Get all elements
     function getElements(){
