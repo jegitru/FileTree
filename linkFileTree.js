@@ -2,7 +2,9 @@
   
     window.FileTree.linkFileTree = function(){
       
-        var id = this.id;
+        var id = this.id,
+            folderClosedClass = this.folderClosedClass,
+            folderOpenedClass = this.folderOpenedClass;
         
         // Get all elements
         function getElements(){
@@ -48,11 +50,13 @@
 
                             style.display = '';
                             this.parentNode.setAttribute('data-opened', '1');
+                            $(this).find('i').removeClass(folderClosedClass).addClass(folderOpenedClass);
                           
                         } else {
 
                             style.display = 'none';
                             this.parentNode.setAttribute('data-opened', '0');
+                            $(this).find('i').removeClass(folderOpenedClass).addClass(folderClosedClass);
                         }
                     }
                 }
