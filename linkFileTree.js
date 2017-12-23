@@ -39,6 +39,10 @@
                             elem.parent().attr('data-opened', '0');
                             elem.find('i').removeClass(folderOpenedClass).addClass(folderClosedClass);
                         }
+                        
+                    } else {
+                      
+                        alert(111);
                     }
                 }
                 
