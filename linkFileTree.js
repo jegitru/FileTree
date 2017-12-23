@@ -43,12 +43,12 @@ linkFileTree = function(id){
                     if ( style.display == 'none' ) {
 
                         style.display = '';
-                        this.setAttribute('data-opened', '1');
+                        this.parentNode.setAttribute('data-opened', '1');
                       
                     } else {
 
                         style.display = 'none';
-                        this.setAttribute('data-opened', '0');
+                        this.parentNode.setAttribute('data-opened', '0');
                     }
                 }
             }
