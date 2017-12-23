@@ -2,7 +2,7 @@
   
     window.FileTree.linkFileTree = function(){
       
-        var api = this, id = api.id,
+        var api = this,
             folderClosedClass = this.folderClosedClass,
             folderOpenedClass = this.folderOpenedClass;
         
