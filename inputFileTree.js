@@ -61,7 +61,7 @@
                 forEachElements(function(){
                     if ( this.value.indexOf(path) === 0 ) {
                         if ( this.checked ) {
-                            if ( this.name == 'file' ) {
+                            if ( this.name == 'file[]' ) {
                                 checked++;
                             }
                         }
@@ -80,7 +80,7 @@
                 
                 forEachElements(function(){
                     if ( this.value.indexOf(path) === 0 ) {
-                        if ( this.name == 'file' ) {
+                        if ( this.name == 'file[]' ) {
                             countFiles++;
                         }
                     }
@@ -93,7 +93,7 @@
               
                 $(this).bind('change', function(){
 
-                    if ( this.name == 'folder' ) {
+                    if ( this.name == 'folder[]' ) {
                       
                         var elem = this;
                       
@@ -103,7 +103,7 @@
                             }
                         });
 
-                    } else if ( this.name == 'file' ) {
+                    } else if ( this.name == 'file[]' ) {
                       
                         checkParentFolder(this.value);
                     }
