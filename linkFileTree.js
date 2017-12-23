@@ -24,7 +24,7 @@
                 if ( elem.attr('data-type') == 'folder' ) {
                   
                     var listElement = elem.nextAll('ul');
-                    
+                    alert(listElement.length);
                     if ( listElement.length ) {
 
                         if ( listElement.is(':hidden') ) {
@@ -42,7 +42,7 @@
                         
                     } else {
                       
-                        alert(111);
+                        
                     }
                 }
                 
